@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Permohonan</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            opacity: 0; /* Mulai dengan opacity 0 untuk animasi fade-in */
+            animation: fadeIn 1s forwards; /* Animasi fade-in */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h2 {
+            margin-top: 20px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: border-color 0.3s, box-shadow 0.3s; /* Tambahkan transisi box-shadow */
+        }
+
+        input:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Tambahkan efek shadow saat fokus */
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s; /* Tambahkan transisi transform */
+        }
+
+        button:hover {
+            background-color: #04AA6D;
+        }
+
+        button:active {
+            transform: scale(0.95); /* Efek scale saat tombol ditekan */
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0; /* Mulai dengan opacity 0 untuk animasi fade-in */
+            animation: fadeIn 1s forwards; /* Animasi fade-in */
+            animation-delay: 0.5s; /* Delay untuk form-container */
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .icon {
+            margin-right: 8px;
+        }
+
+        button {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+    </style>
+    <script>
+        function updatePrice() {
+            const satuanInput = document.getElementById('satuan');
+            const hargaInput = document.getElementById('harga');
+            const satuan = parseInt(satuanInput.value);
+            const basePrice = 185000; // Harga satuan
+
+            // Menghitung harga total berdasarkan satuan
+            const newPrice = basePrice * satuan; // Mengalikan dengan harga satuan
+            hargaInput.value = newPrice.toLocaleString('id-ID'); // Format harga dengan pemisah ribuan
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Detail Permohonan</h2>
+    <div class="form-container">
+        <form>
+            <label for="jenis-informasi"><span class="icon">📄</span>Jenis Informasi:</label>
+            <input type="text" id="jenis-informasi" name="jenis-informasi" placeholder="Masukkan jenis informasi" value="Informasi Geofisika Untuk Keperluan Klaim Asuransi (Kejadian Petir)" required>
+
+            <label for="satuan"><span class="icon">📦</span>Satuan:</label>
+            <input type="number" id="satuan" name="satuan" placeholder="Masukkan satuan" value="1" required oninput="updatePrice()">
+
+            <label for="harga"><span class="icon">💲</span>Harga:</label>
+            <input type="text" id="harga" name="harga" placeholder="Masukkan harga" value="185.000" required readonly>
+
+            <label for="penanggung-jawab"><span class="icon">👤</span>Penanggung Jawab:</label>
+            <input type="text" id="penanggung-jawab" name="penanggung-jawab" placeholder="Nama penanggung jawab" value="kelompok kerja seismologi teknik geofisika potensial dan tanda waktu">
+
+            <label for="berat-satuan"><span class="icon">⚖️</span>Berat Satuan:</label>
+            <input type="number" id="berat-satuan" name="berat-satuan" placeholder="Masukkan berat satuan" required>
+
+        </form>
+    </div>
+
+
+    <h2>Rincian Produk</h2>
+    <div class="form-container">
+        <form>
+            <label for="jumlah-lokasi"><span class="icon">📍</span>Jumlah Lokasi:</label>
+            <input type="number" id="jumlah-lokasi" name="jumlah-lokasi" placeholder="Masukkan jumlah lokasi" required>
+        
+            <label for="jumlah-hari"><span class="icon">🗓️</span>Jumlah Hari:</label>
+            <input type="number" id="jumlah-hari" name="jumlah-hari" placeholder="Masukkan jumlah hari" required>
+            
+            <label for="tanggal-mulai"><span class="icon">📅</span>Tanggal Mulai:</label>
+            <input type="date" id="tanggal-mulai" name="tanggal-mulai" required>
+            
+            <label for="tanggal-selesai"><span class="icon">📅</span>Tanggal Selesai:</label>
+            <input type="date" id="tanggal-selesai" name="tanggal-selesai" required>
+            
+            <label for="koordinat"><span class="icon">📍</span>Koordinat:</label>
+            <input type="text" id="koordinat" name="koordinat" placeholder="Masukkan koordinat (contoh: -6.200)"required>
+            
+
+            <a href="kirim_surat.html">
+                <button type="button">Selanjutnya</button>
+            </a>
+        </form>
+    </div> 

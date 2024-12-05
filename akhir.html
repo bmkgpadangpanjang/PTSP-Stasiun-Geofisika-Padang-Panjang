@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ucapan Permintaan Diproses</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+            overflow: hidden; /* Mencegah scroll saat animasi */
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0; /* Mulai dengan opacity 0 */
+            transform: translateY(-20px); /* Mulai sedikit di atas */
+            animation: fadeInUp 0.5s forwards; /* Animasi fadeInUp */
+        }
+        h2 {
+            color: #007bff;
+        }
+        p {
+            font-size: 16px;
+            color: #333333;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1; /* Akhir dengan opacity 1 */
+                transform: translateY(0); /* Kembali ke posisi normal */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Permintaan Anda Sedang Diproses</h2>
+        <p>Terima kasih telah menghubungi kami. Permintaan Anda sedang dalam proses dan kami akan segera memberikan informasi lebih lanjut.</p>
+        <p>Silakan tunggu info selanjutnya dari kami.</p>
+        <p>Jika Anda memiliki pertanyaan lebih lanjut, jangan ragu untuk menghubungi kami.</p>
+    </div>
+</body>
+</html>

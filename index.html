@@ -1,0 +1,561 @@
+<!-- Replace with your HTML Code 
+(Leave empty if not needed) -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <style>
+        /* Replace with your CSS Code 
+(Leave empty if not needed) */                                           
+
+
+  body {
+    margin: 0;
+    background: #f5f5f5;
+    color: #4e4e4e;
+    font: 18px/27px 'Arial', sans-serif;
+    text-align: center;
+  }
+  
+
+ 
+  h4,
+  h5,
+  h6 {
+    color: #1e1e1e;
+  }
+  
+  /*header+nav*/
+  
+  header {
+    background-color: hsl(212, 92%, 66%);
+    color: #fff;
+    padding: px;
+    text-align: left;
+    position: sticky;
+    height: auto;
+  }
+  
+ /* Default styling for the menu button */
+nav {
+  background-color: hsl(212, 92%, 66%);
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Media query for small screens (max-width: 768px) */
+@media only screen and (max-width: 768px) {
+  nav {
+    padding: 5px;
+  }
+  nav ul {
+    flex-direction: column;
+  }
+  nav li {
+    margin-right: 0;
+  }
+  nav li a {
+    font-size: 16px;
+  }
+}
+
+/* Media query for medium screens (min-width: 769px) and (max-width: 1024px) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  nav {
+    padding: 10px;
+  }
+  nav ul {
+    flex-direction: row;
+  }
+  nav li {
+    margin-right: 20px;
+  }
+  nav li a {
+    font-size: 18px;
+  }
+}
+
+/* Media query for large screens (min-width: 1025px) */
+@media only screen and (min-width: 1025px) {
+  nav {
+    padding: 15px;
+  }
+  nav ul {
+    flex-direction: row;
+  }
+  nav li {
+    margin-right: 30px;
+  }
+  nav li a {
+    font-size: 20px;
+  }
+}
+  
+  body.menu-active nav#slide-menu {
+    left: 0px;
+  }
+  
+  body.menu-active nav#slide-menu ul {
+    left: 0px;
+    opacity: 1;
+  }
+  
+  /*button*/
+  
+  button {
+    background-color: transparent;
+    border: 3px ridge #5e7b8b;
+    border-radius: 0.3em;
+    color: #fff;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    outline: none;
+    width: 10em;
+    position: relative;
+    height: 3.5em;
+    transition: 1s;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .button2 {
+    background-color: transparent;
+  }
+  
+  .button3 {
+    background-color: transparent;
+  }
+  
+  .button4 {
+    background-color: transparent;
+  }
+  
+  .button5 {
+    background-color: transparent;
+  }
+  
+  button::after {
+    content: "";
+    position: absolute;
+    top: -8.5px;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    background-color: #404040;
+    transition: 0.5s;
+    transform-origin: center;
+  }
+  
+  button::before {
+    content: "";
+    transform-origin: center;
+    position: absolute;
+    top: 70.9%;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    background-color: #404040;
+    transition: 0.5s
+  }
+
+button:hover::before, button:hover::after {
+  transform: scale(0)
+}
+
+button:hover {
+  box-shadow: inset 0px 0px 25px #1479EA;
+}
+
+/*immagine*/
+
+.background-image {
+    position: relative;
+    height: 650px; /* Tinggi yang diinginkan */
+    text-align: center;
+    color: white; /* Warna teks */
+}
+
+.background-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Mengisi seluruh area */
+    background-image: url(bmkg.jpeg); 
+    background-size: cover;
+    background-position: center;
+    filter: brightness(50%); /* Mengatur kecerahan gambar */
+    z-index: 0; /* Pastikan ini di belakang teks */
+}
+
+h1 {
+    font-size: 50px; /* Ukuran font */
+    position: absolute;
+    text-transform: capitalize;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    z-index: 1; /* Menempatkan teks di atas gambar */
+    margin: 0; /* Menghilangkan margin default */
+    padding: 20px; /* Menambahkan padding di sekitar teks */
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang hitam semi-transparan */
+    border-radius: 10px; /* Menambahkan sudut melengkung */
+    line-height: 1.2; /* Mengatur jarak antar baris */
+}
+  
+/*siamo al 2° pezzo (about)*/
+
+/* Contenitore della flip card */
+  
+.flip-card {
+  background-color: transparent;
+  width: 400px; /*larghrzza */
+  height: 300px;  /*altezza*/
+  perspective: 1000px; /* Aggiunge la profondità */
+  display: inline-block;
+  margin: 20px;
+}
+
+/* Interno della flip card */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+/* Lato frontale della flip card */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Nasconde il lato nascosto */
+}
+
+/* Lato frontale */
+.flip-card-front {
+  background-color: #bbb; /* Colore di sfondo */
+  color: rgb(255, 255, 255); /* Colore del testo */
+}
+
+/* Lato posteriore */
+.flip-card-back {
+  background-color: #000; /* Colore di sfondo */
+  color: white; /* Colore del testo */
+  transform: rotateY(180deg); /* Ruota di 180 gradi */
+  
+}
+
+/* Quando passi sopra la flip card, applica l'effetto flip */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Immagine all'interno della flip card */
+.card-image {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.flip-card-back p{
+  margin: 20px;
+}
+
+/*3° pezzo (fasi)*/
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  color: #02886f;
+  text-align: center;
+}
+
+.subtitle {
+  color: #02886f;
+}
+
+.phase {
+  margin-bottom: 20px;
+}
+
+.phase p {
+  text-align: justify;
+}
+
+
+
+/*4° pezzo (sintomi)*/
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  color: #02886f;
+  text-align: center;
+}
+
+.subtitle {
+  color: #02886f;
+}
+
+.subtitle::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: #02886f;
+  margin: 10px auto;
+}
+
+.phase {
+  margin-bottom: 20px;
+}
+
+.phase p {
+  text-align: justify;
+}
+
+/*4° pezzo (sintomi)*/
+
+.symptoms-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.symptom {
+  width: calc(33.33% - 40px);
+  margin: 20px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border: 2px solid #02886f; /* bordo */
+  text-align: center;
+}
+
+.symptom:hover {
+  transform: translateY(-5px);
+}
+
+.symptom-icon {
+  font-size: 2em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.symptom-description {
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+
+/*trattamento ultimo pezzo*/
+
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  overflow: hidden;
+  width: calc(50% - 40px);
+  max-width: 500px;
+}
+
+.content {
+  padding: 20px;
+}
+img {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.logo-container {
+    background-color: #fff; /* Atau warna lain yang kontras */
+    border-radius: 50%; /* Untuk lingkaran */
+    padding: 10px; /* Ruang di sekitar logo */
+}
+
+
+
+.header-image {
+    width: 100%; /* Atur lebar gambar sesuai kebutuhan */
+    height: auto; /* Menjaga rasio aspek gambar */
+    animation: none; /* Pastikan tidak ada animasi */
+}
+nav {
+    background-color:hsl(212, 92%, 66%); /* Warna latar belakang menu */
+    color: #fff;
+     /* Jarak antara menu dan header */
+}
+
+nav ul {
+    list-style-type: none; /* Menghilangkan bullet point */
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline; /* Menampilkan menu secara horizontal */
+    margin-right: 10px; /* Jarak antar menu */
+}
+
+nav li a {
+    text-decoration: none; /* Menghilangkan garis bawah */
+    color: #fff; /* Warna teks menu */
+}
+
+
+
+
+
+
+
+
+                                         
+            
+    </style>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <script src="bon non lo so.js"></script>
+    <link rel="stylesheet" href="stile.css">
+</head>
+<body>
+
+    <!-- questo è il corpo -->
+<style>
+  .logo {
+      height: 70px; /* Ubah ukuran sesuai kebutuhan */
+      margin: 4px;
+      margin-left: 50px;
+      float: left;
+      position: relative;
+  }
+</style>
+
+<header align="center">
+  <a href="" class="btn"></a>
+  <img src="header.png" alt="Gambar Header" class="header-image">
+  
+  <!-- Tambahkan menu di sini -->
+  <nav>
+    <ul>
+      <li><a href="index.html">BERANDA</a></li>
+      <li><a href="profil.html">PROFIL</a></li>
+      <li><a href="layanan.html">LAYANAN</a></li>
+      <li><a href="saran.html">SARAN</a></li>
+      <li style=><a href="login.html">LOGIN</a></li> <!-- Menu Logout di sebelah kanan -->
+    </ul>
+  </nav>
+</header>
+    </header>
+   
+    
+
+
+<!--questa è l'immagine(La ludopatia)--> 
+    <body>
+      <!-- Gambar Latar Belakang -->
+<div class="background-image">
+  <h1>SELAMAT DATANG DI PTSP STASIUN GEOFISIKA PADANG PANJANG</h1>
+</div>
+
+<!-- Footer -->
+<!-- Footer -->
+<!-- Footer -->
+<footer style="background-color: hsl(212, 92%, 66%); color: white; text-align: center; padding: 20px; position: relative;">
+  <p>Stasiun Geofisika Padang Panjang</p>
+  <p>Alamat: Jl. Meteorologi Selaing Bawah</p>
+  
+  
+  <!-- Logo Sosial Media -->
+  <div>
+    <a href="https://facebook.com" target="blank">
+      <img src="th.jpeg" alt="Facebook" style="width: 30px; margin: 0 10px;">
+    </a>
+    <a href="https://twitter.com" target="blank">
+      <img src="th (2).jpeg" alt="Twitter" style="width: 30px; margin: 0 10px;">
+    </a>
+    <a href="https://instagram.com" target="blank">
+      <img src="th (1).jpeg" alt="Instagram" style="width: 30px; margin: 0 10px;">
+       <p>@bmkgpadangpanjang</p>
+    </a>
+   
+
+  </div>
+  
+  <p>&copy; 2023 Semua hak dilindungi.</p>
+</footer>
+</body>  
+    </body>
+
+
+  

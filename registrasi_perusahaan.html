@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url('bmkg.jpeg'); /* Ganti dengan nama gambar Anda */
+            background-size: cover; /* Menutupi seluruh area */
+            background-position: center; /* Memusatkan gambar */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            border: 2px solid #f1f1f1;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 300px; /* Ukuran form */
+            opacity: 0; /* Mulai dengan transparan */
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Transisi untuk opacity dan transform */
+            transform: translateY(20px); /* Mulai sedikit lebih rendah */
+        }
+
+        form.show {
+            opacity: 1; /* Menjadi tidak transparan */
+            transform: translateY(0); /* Kembali ke posisi normal */
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #04AA6D;
+            color: white;
+            padding: 10px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+
+        .psw {
+            float: right;
+            padding-top: 16px;
+        }
+    </style>
+    <script>
+        function goToForm2(event) {
+            event.preventDefault(); // Mencegah form dari pengiriman
+            document.getElementById("form1").classList.remove("show"); // Sembunyikan form1
+            setTimeout(() => {
+                document.getElementById("form1").style.display = "none"; // Sembunyikan form1 setelah animasi
+                document.getElementById("form2").style.display = "block"; // Tampilkan form2
+                document.getElementById("form2").classList.add("show"); // Tampilkan form2 dengan animasi
+            }, 500); // Tunggu durasi animasi
+        }
+    
+        function goToForm3(event) {
+            event.preventDefault(); // Mencegah form dari pengiriman
+            document.getElementById("form2").classList.remove("show"); // Sembunyikan form2
+            setTimeout(() => {
+                document.getElementById("form2").style.display = "none"; // Sembunyikan form2 setelah animasi
+                document.getElementById("form3").style.display = "block"; // Tampilkan form3
+                document.getElementById("form3").classList.add("show"); // Tampilkan form3 dengan animasi
+            }, 500); // Tunggu durasi animasi
+        }
+
+        // Menampilkan form pertama saat halaman dimuat
+        window.onload = function() {
+            document.getElementById("form1").style.display = "block"; // Tampilkan form1
+            document.getElementById("form1").classList.add("show"); // Tampilkan form1 dengan animasi
+        };
+    </script>
+<body>
+
+<form id="form1" action="/action_page.php" method="post">
+    <div class="form1">
+      <h2>Data Diri</h2>
+        <label for="nik"><b>No Ktp/Nik</b></label>
+        <input type="text" placeholder="Masukkan Nik/Ktp" name="nik" required>
+
+        <label for="nama_lengkap"><b>Nama Lengkap</b></label>
+        <input type="text" placeholder="Masukkan Nama Lengkap" name="nama_lengkap" required>
+
+        <label for="pekerjaan"><b>Pekerjaan</b></label>
+        <input type="text" placeholder="Masukkan Pekerjaan" name="pekerjaan" required>
+
+        <label for="alamat"><b>Alamat</b></label>
+        <input type="text" placeholder="Masukkan Alamat" name="alamat" required>
+
+        <button type="reset" class="cancelbtn">Hapus Semua</button>  
+        <button type="submit" onclick="goToForm2(event)">Selanjutnya</button>
+    </div>
+</form>
+
+<form id="form2" action="/action_page.php" method="post" style="display:none;">
+    <div class="form2">
+        <h2>Data Perusahaan</h2>
+        <label for="Nama_Perusahaan"><b>Nama Perusahaan</b></label>
+        <input type="text" placeholder="Masukkan Nama Perusahaan" name="Nama_Perusahaan" required>
+
+        <label for="alamat_perusahaan"><b>Alamat Perusahaan</b></label>
+        <input type="text" placeholder="Masukkan Alamat Perusahaan" name="alamat_perusahaan" required>
+
+        <label for="provinsi"><b>Provinsi</b></label>
+        <input type="text" placeholder="Masukkan Provinsi" name="provinsi" required>
+
+        <label for="kab_kota"><b>Kabupaten/Kota</b></label>
+        <input type="text" placeholder="Masukkan Kabupaten/Kota" name="kab_kota" required>
+
+        <label for="email_perusahaan"><b>Email Perusahaan</b></label>
+        <input type="text" placeholder="Masukkan Email Perusahaan" name="email_perusahaan" required>
+
+        <label for="no_perusahaan"><b>No Telpon Perusahaan</b></label>
+        <input type="text" placeholder="Masukkan No Telpon Perusahaan" name="no_perusahaan" required>
+
+        <button type="reset" class="cancelbtn">Hapus Semua</button>  
+        <button type="submit" onclick="goToForm3(event)">Selanjutnya</button>
+    </div>
+</form>
+
+<form id="form3" action="/action_page.php" method="post" style="display:none;">
+    <div class="form3">
+        <h2>Data Akun</h2>
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Masukkan email" name="email" required>
+
+        <label for="User_Name"><b>User Name</b></label>
+        <input type="text" placeholder="Masukan user name" name="User_Name" required>
+
+        <label for="password"><b>password</b></label>
+        <input type="password" placeholder="Masukkan password" name="password" required>
+
+        <label for="Ulangi_password"><b>Ulangi password</b></label>
+        <input type="text" placeholder="Masukkan password" name="Ulangi_password" required>
+
+        <label for="kode_keamanan"><b>Kode Keamanan</b></label>
+        <input type="text" placeholder="Masukkan kode keamanan" name="kode_keamanan" required>
+
+        <button type="reset" class="cancelbtn">Hapus Semua</button>  
+        <a href="login.html" style="display: block; background-color: #04AA6D; color: white; padding: 10px; margin: 8px 0; text-align: center; text-decoration: none; border-radius: 5px;">Daftar</a>
+    </div>
+</form>
+
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('bmkg.jpeg'); /* Ganti dengan gambar latar belakang yang menarik */
+            background-size: cover; 
+            background-position: center; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+            opacity: 0; /* Awalnya tidak terlihat */
+            animation: fadeIn 1s forwards; /* Animasi fade in */
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1; /* Menjadi terlihat */
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .form-box {
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            transition: transform 0.3s;
+            margin: 20px; /* Menambahkan jarak antar form */
+        }
+
+        .admin-form {
+            background-color: rgba(255, 255, 255, 0.9);
+            animation: slideInLeft 0.5s forwards; /* Animasi dari kiri */
+        }
+
+        .user-form {
+            background-color: rgba(255, 255, 255, 0.9); /* Warna latar belakang berbeda untuk user */
+            animation: slideInRight 0.5s forwards; /* Animasi dari kanan */
+        }
+
+        h2 {
+            text-align: center;
+            color: #04AA6D;
+        }
+
+        input[type=text], input[type=password], input[type=number] {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        input[type=text]:focus, input[type=password]:focus, input[type=number]:focus {
+            border-color: #04AA6D;
+            outline: none;
+        }
+
+        button {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s, transform 0.3s; /* Transisi untuk hover */
+        }
+
+        button:hover {
+            background-color: #038d5a;
+            transform: scale(1.05); /* Efek zoom saat hover */
+        }
+
+        .cancelbtn {
+            background-color: #f44336;
+        }
+
+        .cancelbtn:hover {
+            background-color: #d32f2f;
+        }
+
+        .psw {
+            float: right;
+            padding-top: 16px;
+        }
+
+    </style>
+    
+</head>
+<body>
+
+
+
+
+
+    <!-- Form Login User -->
+    <div class="form-box user-form">
+        <h2>Login User</h2>
+        <form action="home.html" method="get">
+            <label for="user_uname"><b>Username</b></label>
+            <input type="text" placeholder="Masukkan Username User " name="user_uname" required>
+
+            <label for="user_psw"><b>Password</b></label>
+            <input type="password" placeholder="Masukkan Password User" name="user_psw" required id="user_psw">
+            
+            <input type="checkbox" onclick="togglePassword()"> Tampilkan Password
+
+            <button type="submit">Login</button>
+            <span class="psw"><a href="tombol.html">Daftar Disini</a></span>
+        </form>
+    </div>
+</div>
+
+<script>
+    function validateForm() {
+        const codeInput = document.querySelector('input[name="admin_code"]');
+        const correctCode = 35; // Angka yang harus dimasukkan
+
+        if (parseInt(codeInput.value) !== correctCode) {
+            alert('Kode yang dimasukkan tidak sesuai');
+            return false; // Mencegah form dikirim
+        }
+
+        return true; // Mengizinkan form untuk dikirim
+    }
+</script>
+<script>
+    function togglePassword() {
+        const passwordInput = document.getElementById('user_psw');
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text'; // Ubah menjadi text
+        } else {
+            passwordInput.type = 'password'; // Kembali ke password
+        }
+    }
+</script>
+
+</body>
+</html>

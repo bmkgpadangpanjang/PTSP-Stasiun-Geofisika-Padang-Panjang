@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Saran</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container" id="formContainer">
+    <h2>Form Saran</h2>
+    <form id="saranForm" action="/ucapan.html" method="POST">
+        <div class="form-group">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" required>
+        </div>
+        <div class="form-group">
+            <label for="saran">Saran:</label>
+            <textarea id="saran" name="saran" rows="4" required></textarea>
+        </div>
+        <button type="submit">Kirim Saran</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('saranForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Mencegah pengiriman formulir secara default
+        // Menyembunyikan formulir
+        document.getElementById('formContainer').style.display = 'none';
+        // Mengarahkan ke halaman ucapan
+        window.location.href = '/ucapan.html'; // Ganti dengan URL halaman ucapan yang sesuai
+    });
+</script>
+
+</body>
+</html>

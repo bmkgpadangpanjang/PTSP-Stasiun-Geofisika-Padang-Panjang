@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+       body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f2f2f2; /* Anda dapat menghapus ini jika tidak ingin warna latar belakang */
+            background-image: url('bmkg.jpeg'); /* Ganti dengan path gambar Anda */
+            background-size: cover; /* Agar gambar menutupi seluruh area */
+            background-position: center; /* Agar gambar terpusat */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 150vh;
+            margin: 0;
+            opacity: 0; /* Mulai dengan opacity 0 untuk efek fade-in */
+            animation: fadeIn 1s forwards; /* Animasi fade-in */
+}
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        form {
+            border: 2px solid #f1f1f1;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 300px; /* Ukuran form */
+            transform: translateY(-20px); /* Mulai sedikit di atas */
+            animation: slideIn 0.5s forwards; /* Animasi slide-in */
+        }
+        form.show {
+            opacity: 1; /* Menjadi tidak transparan */
+            transform: translateY(0); /* Kembali ke posisi normal */
+        }
+
+
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        input[type=text], input[type=password], input[type=email] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            transition: border-color 0.3s; /* Transisi border */
+        }
+
+        input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
+            border-color: #04AA6D; /* Ganti warna border saat fokus */
+        }
+
+        button {
+            background-color: #04AA6D;
+            color: white;
+            padding: 10px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s; /* Transisi background */
+        }
+
+        button:hover {
+            opacity: 0.8;
+            background-color: #038a5a; /* Warna saat hover */
+        }
+
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+
+        .psw {
+            float: right;
+            padding-top: 16px;
+        }
+
+        .result {
+            margin-top: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 400px; /* Ukuran hasil */
+        }
+    </style>
+</head>
+<body>
+
+    <form id="registrationForm">
+        <label for="uname">Nama Lengkap:</label>
+        <input type="text" id="uname" name="uname" required>
+        
+        <label for="nik">Nik:</label>
+        <input type="text" id="nik" name="nik" required>
+        
+        <label for="alamat">Alamat:</label>
+        <input type="text" id="alamat" name="alamat" required>
+        
+        <label for="no_hp">No Hp:</label>
+        <input type="text" id="no_hp" name="no_hp" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="username">User   Name:</label>
+        <input type="text" id="username" name="username" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        
+        <label for="password_repeat">Ulangi Password:</label>
+        <input type="password" id="password_repeat" name="password_repeat" required>
+        
+        <label for="kode_keamanan">Kode Keamanan:</label>
+        <input type="text" id="kode_keamanan" name="kode_keamanan" required>
+        
+        <a href="login.html" style="text-decoration: none;">
+            <button type="button">Daftar</button>
+        </a>
+    </form>
+
+    <div class="result" id="result" style="display: none;">
+        <h3>Data yang Dimasukkan:</h3>
+        <p id="output"></p>
+    </div>
+
+</body>
+</html>

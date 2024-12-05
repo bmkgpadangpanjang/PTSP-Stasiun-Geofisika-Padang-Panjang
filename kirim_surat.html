@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Kirim Surat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            opacity: 0; /* Mulai dengan opacity 0 */
+            transform: translateY(-20px); /* Mulai sedikit di atas */
+            animation: fadeInUp 0.5s forwards; /* Tambahkan animasi */
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1; /* Akhir dengan opacity 1 */
+                transform: translateY(0); /* Akhir di posisi normal */
+            }
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="file"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: border-color 0.3s; /* Transisi border */
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="file"]:focus {
+            border-color: #04aa6d; /* Ubah warna border saat fokus */
+        }
+        input[type="submit"] {
+            background-color: #04aa6d;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s; /* Transisi background */
+        }
+        input[type="submit"]:hover {
+            background-color: #037a52; /* Ubah warna saat hover */
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Surat Pengantar Dibawah ini</h1>
+        
+        <form action="akhir.html" method="post" enctype="multipart/form-data">
+            <label for="file_surat">Upload Surat:</label>
+            <input type="file" id="file_surat" name="file_surat" accept=".pdf,.doc,.docx" required>
+            
+            <label for="file_ktp">Upload Foto KTP:</label>
+            <input type="file" id="file_ktp" name="file_ktp" accept=".jpg,.jpeg,.png" required>
+            
+    </form>
+    <a href="akhir.html">
+            <input type="submit" value="Kirim">   
+    </div>
+</body>
+</html>

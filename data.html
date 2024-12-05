@@ -1,0 +1,31 @@
+<script>
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Mencegah pengiriman form
+
+        // Mengambil nilai dari input
+        const uname = document.getElementById('uname').value;
+        const nik = document.getElementById('nik').value;
+        const alamat = document.getElementById('alamat').value;
+        const no_hp = document.getElementById('no_hp').value;
+        const email = document.getElementById('email').value;
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const password_repeat = document.getElementById('password_repeat').value;
+        const kode_keamanan = document.getElementById('kode_keamanan').value;
+
+        // Menampilkan data di bawah form
+        const output = `
+            <strong>Nama Lengkap:</strong> ${uname}<br>
+            <strong>Nik:</strong> ${nik}<br>
+            <strong>Alamat:</strong> ${alamat}<br>
+            <strong>No Hp:</strong> ${no_hp}<br>
+            <strong>Email:</strong> ${email}<br>
+            <strong>User Name:</strong> ${username}<br>
+            <strong>Password:</strong> ${password}<br>
+            <strong>Ulangi Password:</strong> ${password_repeat}<br>
+            <strong>Kode Keamanan:</strong> ${kode_keamanan}
+        `;
+        document.getElementById('output').innerHTML = output;
+        document.getElementById('result').style.display = 'block'; // Menampilkan div hasil
+    });
+</script>

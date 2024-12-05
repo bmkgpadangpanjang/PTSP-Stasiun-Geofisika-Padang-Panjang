@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url('bmkg.jpeg'); /* Ganti dengan path gambar Anda */
+            background-size: cover; /* Memastikan gambar menutupi seluruh latar belakang */
+            background-position: center; /* Memusatkan gambar */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            animation: fadeIn 1s ease-in; /* Animasi fade in untuk body */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        form {
+            border: 2px solid #f1f1f1;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 300px; /* Ukuran form */
+            transform: translateY(-20px);
+            opacity: 0;
+            animation: slideIn 0.5s forwards; /* Animasi slide in untuk form */
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            transition: border-color 0.3s; /* Transisi border saat fokus */
+        }
+
+        input[type=text]:focus, input[type=password]:focus {
+            border-color: #04AA6D; /* Warna border saat fokus */
+        }
+
+        .button {
+            background-color: #04AA6D;
+            color: white;
+            padding: 10px;
+            margin: 8px 0;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            border-radius: 5px;
+            transition: background-color 0.3s; /* Transisi background saat hover */
+        }
+
+        .button:hover {
+            opacity: 0.8;
+            background-color: #038d5a; /* Warna saat hover */
+        }
+
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+
+        .psw {
+            float: right;
+            padding-top: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<form action="/action_page.php" method="post">
+    <div class="container">
+        <a href="registrasi.html" class="button">Daftar Perorangan</a>
+        <a href="registrasi_perusahaan.html" class="button">Daftar Perusahaan</a>
+    </div>
+</form>
+
+</body>
+</html>

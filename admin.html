@@ -1,0 +1,169 @@
+
+
+
+
+    <!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('pantai.jpg'); /* Ganti dengan gambar latar belakang yang menarik */
+            background-size: cover; 
+            background-position: center; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+            opacity: 0; /* Awalnya tidak terlihat */
+            animation: fadeIn 1s forwards; /* Animasi fade in */
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1; /* Menjadi terlihat */
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .form-box {
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            transition: transform 0.3s;
+            margin: 20px; /* Menambahkan jarak antar form */
+        }
+
+        .admin-form {
+            background-color: rgba(255, 255, 255, 0.9);
+            animation: slideInLeft 0.5s forwards; /* Animasi dari kiri */
+        }
+
+        .user-form {
+            background-color: rgba(255, 255, 255, 0.9); /* Warna latar belakang berbeda untuk user */
+            animation: slideInRight 0.5s forwards; /* Animasi dari kanan */
+        }
+
+        h2 {
+            text-align: center;
+            color: #04AA6D;
+        }
+
+        input[type=text], input[type=password], input[type=number] {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        input[type=text]:focus, input[type=password]:focus, input[type=number]:focus {
+            border-color: #04AA6D;
+            outline: none;
+        }
+
+        button {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s, transform 0.3s; /* Transisi untuk hover */
+        }
+
+        button:hover {
+            background-color: #038d5a;
+            transform: scale(1.05); /* Efek zoom saat hover */
+        }
+
+        .cancelbtn {
+            background-color: #f44336;
+        }
+
+        .cancelbtn:hover {
+            background-color: #d32f2f;
+        }
+
+        .psw {
+            float: right;
+            padding-top: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <!-- Form Login Admin -->
+    <div class="form-box admin-form">
+        <h2>Login Admin</h2>
+        <p>Hanya admin yang dapat mengakses form ini.</p>
+        <form id="adminLoginForm" onsubmit="return validateForm()" method="get" action="home.html">
+            <label for="admin_uname"><b>Username Admin</b></label>
+            <input type="text" placeholder="Masukkan Username Admin" name="admin_uname" required>
+
+            <label for="admin_psw"><b>Password Admin</b></label>
+ <input type="password" placeholder="Masukkan Password Admin" name="admin_psw" required>
+
+            <label for="admin_code"><b>Kode Angka</b></label>
+            <input type="number" placeholder="Masukkan Kode Angka" name="admin_code" required>
+
+            <button type="submit">Login Admin</button>
+            <span class="psw"><a href="registrasi_admin.html">Daftar sebagai Admin</a ></span>
+        </form>
+    </div>
+</div>
+
+<script>
+    function validateForm() {
+        const codeInput = document.querySelector('input[name="admin_code"]');
+        const correctCode = 35; // Angka yang harus dimasukkan
+
+        if (parseInt(codeInput.value) !== correctCode) {
+            alert('Kode yang dimasukkan tidak sesuai');
+            return false; // Mencegah form dikirim
+        }
+
+        return true; // Mengizinkan form untuk dikirim
+    }
+</script>
+
+</body>
+</html>

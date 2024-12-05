@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Beranda dengan Tiga Item</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f0f0f0, #cce7ff);
+            transition: background-color 0.3s ease;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .item {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            margin: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+            width: calc(33% - 60px);
+            height: 300px;
+            vertical-align: top;
+            opacity: 0; /* Awalnya tidak terlihat */
+            transform: translateY(20px); /* Pindahkan sedikit ke bawah */
+            animation: fadeInUp 0.5s forwards; /* Tambahkan animasi */
+        }
+        .item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        .button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s, transform 0.3s;
+            opacity: 0; /* Awalnya tidak terlihat */
+            transform: translateY(10px); /* Pindahkan sedikit ke bawah */
+            animation: fadeIn 0.5s forwards; /* Tambahkan animasi */
+        }
+        .button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        @media (max-width: 768px) {
+            .item {
+                width: calc(100% - 60px);
+            }
+        }
+
+        /* Animasi */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Selamat Datang di PTSP Stasiun Geofisika Padang Panjang</h1>
+        <p>Berikut adalah layanan yang kami sediakan:</p>
+
+        <div class="item">
+            <h2>Informasi Peta Kegempaan Untuk Perencanaa Konstruksi</h2>
+            <br>
+            <p>Klik Tombol Dibawah ini Untuk Melanjutkan</p>
+            <br>
+            <br>
+            <a href="login.html" class="button">Pelajari Lebih Lanjut</a>
+        </div>
+
+        <div class="item">
+            <h2>Informasi Geofisika Untuk Keperluan Klaim Asuransi (Gempa Bumi)</h2>
+            <br>
+            <p>Klik Tombol Dibawah ini Untuk Melanjutkan</p>
+            <br>
+            <br>
+            <a href="login.html" class="button">Pelajari Lebih Lanjut</a>
+          
+        </div>
+
+        <div class="item">
+            <h2>Informasi Geofisika Untuk Keperluan Klaim Asuransi (Kejadian Petir)</h2>
+            <br>
+            <p>Klik Tombol Dibawah ini Untuk Melanjutkan</p>
+            <br>
+            <br>
+            <a href="login.html" class="button">Pelajari Lebih Lanjut</a>
+            
+        </div>
+
+        <div class="item">
+            <h2>Kejadian Petir</h2>
+            <br>
+            <p>Klik Tombol Dibawah ini Untuk Melanjutkan</p>
+            <br>
+            <br>
+            <a href="login.html" class="button">Pelajari Lebih Lanjut</a>
+          
+        </div>
+
+    </div>
+</body>
+</html>

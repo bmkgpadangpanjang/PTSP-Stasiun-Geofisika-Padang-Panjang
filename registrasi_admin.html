@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150vh;
+            margin: 0;
+            opacity: 0; /* Mulai dengan opacity 0 untuk efek fade-in */
+            animation: fadeIn 1s forwards; /* Animasi fade-in */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        form {
+            border: 2px solid #f1f1f1;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 400px; /* Ukuran form */
+            transform: translateY(-20px); /* Mulai sedikit di atas */
+            animation: slideIn 0.5s forwards; /* Animasi slide-in */
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            transition: border-color 0.3s; /* Transisi border */
+        }
+
+        input[type=text]:focus, input[type=password]:focus {
+            border-color: #04AA6D; /* Ganti warna border saat fokus */
+        }
+
+        button {
+            background-color: #04AA6D;
+            color: white;
+            padding: 10px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s; /* Transisi background */
+        }
+
+        button:hover {
+            opacity: 0.8;
+            background-color: #038a5a; /* Warna saat hover */
+        }
+
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+
+        .psw {
+            float: right;
+            padding-top: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<form action="/action_page.php" method="post">
+    <div class="container">
+        <label for="uname"><b>Nama Lengkap</b></label>
+        <input type="text" placeholder="Masukkan Nama Lengkap" name="uname" required>
+
+        <label for="nik"><b>Nik</b></label>
+        <input type="text" placeholder="Masukkan Nik" name="nik" required>
+
+        <label for="alamat"><b>Alamat</b></label>
+        <input type="text" placeholder="Masukkan Alamat" name="alamat" required>
+
+        <label for="no_hp"><b>No Hp</b></label>
+        <input type="text" placeholder="Masukkan No Hp" name="no_hp" required>
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Masukkan Email" name="email" required>
+
+        <label for="username"><b>User Name</b></label>
+        <input type="text" placeholder="Masukkan User Name" name="username" required>
+
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Masukkan password" name="password" required>
+
+        <label for="password_repeat"><b>Ulangi Password</b></label>
+        <input type="password" placeholder="Masukkan password" name="password_repeat" required>
+
+        <label for="kode_keamanan"><b>Kode Keamanan</b></label>
+        <input type="password" placeholder="Masukkan Kode Keamanan" name="kode_keamanan" required>
+
+        <button type="reset" class="cancelbtn">Hapus Semua</button>  
+        <button type="button" onclick="window.location.href='index.html'">Daftar</button>
+        
+    </div>
+</form>
+
+</body>
+</html>
